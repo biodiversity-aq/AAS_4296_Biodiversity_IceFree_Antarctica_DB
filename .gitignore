@@ -1,11 +1,5 @@
 # Ignore OpenRefine temp files
 openrefine/workspace/
 
-# Ignore output data files
-data/cleaned/
-
-# Ignore Jupyter notebook checkpoints
-notebooks/.ipynb_checkpoints/
-
 # Ignore macOS and system files
 .DS_Store
