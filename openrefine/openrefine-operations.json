@@ -741,5 +741,565 @@
     "oldColumnName": "Location",
     "newColumnName": "verbatimLocality",
     "description": "Rename column Location to verbatimLocality"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "phylum",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Choanozoa???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Choanozoa"
+      }
+    ],
+    "description": "Mass edit cells in column phylum"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "class",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Bacillariophyceae???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bacillariophyceae"
+      }
+    ],
+    "description": "Mass edit cells in column class"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "class",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Chromadorea???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Chromadorea"
+      }
+    ],
+    "description": "Mass edit cells in column class"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "class",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Eustigmatophyceae???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Eustigmatophyceae"
+      }
+    ],
+    "description": "Mass edit cells in column class"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "class",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Trebouxiophyceae???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Trebouxiophyceae"
+      }
+    ],
+    "description": "Mass edit cells in column class"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "order",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Chlamydomonadales???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Chlamydomonadales"
+      }
+    ],
+    "description": "Mass edit cells in column order"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "order",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Coscinodiscales???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Coscinodiscales"
+      }
+    ],
+    "description": "Mass edit cells in column order"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "order",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Oocystales???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Oocystales"
+      }
+    ],
+    "description": "Mass edit cells in column order"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "order",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Prasiolales???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Prasiolales"
+      }
+    ],
+    "description": "Mass edit cells in column order"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "order",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Sphaeropleales???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sphaeropleales"
+      }
+    ],
+    "description": "Mass edit cells in column order"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "order",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Synechococcales???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Synechococcales"
+      }
+    ],
+    "description": "Mass edit cells in column order"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "order",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Triceratiales???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Triceratiales"
+      }
+    ],
+    "description": "Mass edit cells in column order"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "order",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Zygnematales???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Zygnematales"
+      }
+    ],
+    "description": "Mass edit cells in column order"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "order",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Volvocales???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Volvocales"
+      }
+    ],
+    "description": "Mass edit cells in column order"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "family",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Chaetocerotaceae???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Chaetocerotaceae"
+      }
+    ],
+    "description": "Mass edit cells in column family"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "family",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Gomontiellaceae???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gomontiellaceae"
+      }
+    ],
+    "description": "Mass edit cells in column family"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "family",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Peridiniaceae???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Peridiniaceae"
+      }
+    ],
+    "description": "Mass edit cells in column family"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "family",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Synechococcaceae???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Synechococcaceae"
+      }
+    ],
+    "description": "Mass edit cells in column family"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "family",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Ulotrichaceae???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Ulotrichaceae"
+      }
+    ],
+    "description": "Mass edit cells in column family"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "family",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Zygnemataceae???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Zygnemataceae"
+      }
+    ],
+    "description": "Mass edit cells in column family"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "genus",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Actinomyces???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Actinomyces"
+      }
+    ],
+    "description": "Mass edit cells in column genus"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "genus",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Auxenochlorella???¡"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Auxenochlorella"
+      }
+    ],
+    "description": "Mass edit cells in column genus"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "specificEpithet",
+          "expression": "value",
+          "columnName": "specificEpithet",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "?fuciger",
+                "l": "?fuciger"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "identificationQualifier",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          ""
+        ],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "?fuciger"
+      }
+    ],
+    "description": "Mass edit cells in column identificationQualifier"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "specificEpithet",
+          "expression": "value",
+          "columnName": "specificEpithet",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "?puniceum",
+                "l": "?puniceum"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "identificationQualifier",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          ""
+        ],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "?puniceum"
+      }
+    ],
+    "description": "Mass edit cells in column identificationQualifier"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "specificEpithet",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "?fuciger"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Mass edit cells in column specificEpithet"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "specificEpithet",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "?puniceum"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Mass edit cells in column specificEpithet"
   }
 ]
