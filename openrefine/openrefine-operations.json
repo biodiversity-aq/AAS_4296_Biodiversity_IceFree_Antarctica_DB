@@ -1,0 +1,745 @@
+[
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "scientificName",
+    "newColumnName": "verbatimIdentification",
+    "description": "Rename column scientificName to verbatimIdentification"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "verbatimIdentification",
+    "expression": "grel:value.replace(/\\s+(cf\\.|sp\\.|spp\\.|\\?).*/, \"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "scientificName",
+    "columnInsertIndex": 3,
+    "description": "Create column scientificName at index 3 based on column verbatimIdentification using expression grel:value.replace(/\\s+(cf\\.|sp\\.|spp\\.|\\?).*/, \"\")"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "eventDate",
+    "newColumnName": "verbatimEventDate",
+    "description": "Rename column eventDate to verbatimEventDate"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "verbatimEventDate",
+    "expression": "grel:if(value == \"NA\", \"\", replace(value, \" UTC\", \"\"))",
+    "onError": "set-to-blank",
+    "newColumnName": "eventDate",
+    "columnInsertIndex": 10,
+    "description": "Create column eventDate at index 10 based on column verbatimEventDate using expression grel:if(value == \"NA\", \"\", replace(value, \" UTC\", \"\"))"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "year",
+    "expression": "grel:if(value == \"NA\", \"\", value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column year using expression grel:if(value == \"NA\", \"\", value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "month",
+    "expression": "grel:if(value == \"NA\", \"\", value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column month using expression grel:if(value == \"NA\", \"\", value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "day",
+    "expression": "grel:if(value == \"NA\", \"\", value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column day using expression grel:if(value == \"NA\", \"\", value)"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "verbatimIdentification",
+    "expression": "jython:import re\n\ndef extract_after_prefix(value):\n    match = re.search(r'\\b(cf\\.|sp\\.|\\?)\\s*(.*)', value)\n    return match.group(1) + \" \" + match.group(2) if match else \"\"\n\n# Apply the function to each row's value\nreturn extract_after_prefix(value)",
+    "onError": "set-to-blank",
+    "newColumnName": "identificationQualifier",
+    "columnInsertIndex": 3,
+    "description": "Create column identificationQualifier at index 3 based on column verbatimIdentification using expression jython:import re\n\ndef extract_after_prefix(value):\n    match = re.search(r'\\b(cf\\.|sp\\.|\\?)\\s*(.*)', value)\n    return match.group(1) + \" \" + match.group(2) if match else \"\"\n\n# Apply the function to each row's value\nreturn extract_after_prefix(value)"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "nameAccordingTo",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Catalogue of Life",
+          "catalogue of Life"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Catalogue of Life"
+      }
+    ],
+    "description": "Mass edit cells in column nameAccordingTo"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "nameAccordingTo",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "https://lichenportal.org/portal/taxa/index.php?taxauthid=1&taxon=56382",
+          "https://lichenportal.org/portal/taxa/index.php?taxauthid=1&taxon=56382#"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "https://lichenportal.org/portal/taxa/index.php?taxauthid=1&taxon=56382"
+      }
+    ],
+    "description": "Mass edit cells in column nameAccordingTo"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "institutionCode",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Mass edit cells in column institutionCode"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "coordinateUncertaintyInMetres",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Mass edit cells in column coordinateUncertaintyInMetres"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "collectionCode",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Mass edit cells in column collectionCode"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "reproductiveCondition",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "B"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Breeding"
+      }
+    ],
+    "description": "Mass edit cells in column reproductiveCondition"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "reproductiveCondition",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NB"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Not breeding (NB)"
+      }
+    ],
+    "description": "Mass edit cells in column reproductiveCondition"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "reproductiveCondition",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Breeding"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Breeding (B)"
+      }
+    ],
+    "description": "Mass edit cells in column reproductiveCondition"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "reproductiveCondition",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "U"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Unknown (U)"
+      }
+    ],
+    "description": "Mass edit cells in column reproductiveCondition"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "reproductiveCondition",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NB/U"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Not breeding (NB)/ Unknown (U)"
+      }
+    ],
+    "description": "Mass edit cells in column reproductiveCondition"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "reproductiveCondition",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "B?"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Breding (B)?"
+      }
+    ],
+    "description": "Mass edit cells in column reproductiveCondition"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "scientificNameID",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Mass edit cells in column scientificNameID"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "taxonRemarks",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Mass edit cells in column taxonRemarks"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Location",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "B?????ªsbolken Mountain"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Båsbolken Mountain"
+      }
+    ],
+    "description": "Mass edit cells in column Location"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "originalLongitude",
+    "newColumnName": "verbatimLongitude",
+    "description": "Rename column originalLongitude to verbatimLongitude"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "originalLatitude",
+    "newColumnName": "verbatimLatitude",
+    "description": "Rename column originalLatitude to verbatimLatitude"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "dynamicProperties",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Vagrant species"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Mass edit cells in column dynamicProperties"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "dynamicProperties",
+          "expression": "value",
+          "columnName": "dynamicProperties",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Common visitor in the bay, water or sea ice",
+                "l": "Common visitor in the bay, water or sea ice"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "occurenceRemarks",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Breeding on sea ice"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Breeding on sea ice | Common visitor in the bay, water or sea ice"
+      }
+    ],
+    "description": "Mass edit cells in column occurenceRemarks"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "dynamicProperties",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Common visitor in the bay, water or sea ice"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Mass edit cells in column dynamicProperties"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "dynamicProperties",
+          "expression": "value",
+          "columnName": "dynamicProperties",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Common visitor to the area",
+                "l": "Common visitor to the area"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "occurenceRemarks",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          ""
+        ],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "Common visitor to the area"
+      }
+    ],
+    "description": "Mass edit cells in column occurenceRemarks"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "dynamicProperties",
+          "expression": "value",
+          "columnName": "dynamicProperties",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Common visitor to the area",
+                "l": "Common visitor to the area"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "occurenceRemarks",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ASPA_v2"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ASPA_v2 | Common visitor to the area"
+      }
+    ],
+    "description": "Mass edit cells in column occurenceRemarks"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "dynamicProperties",
+          "expression": "value",
+          "columnName": "dynamicProperties",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Common visitor to the area",
+                "l": "Common visitor to the area"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "occurenceRemarks",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Frequently seen, breeding unconfirmed"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Frequently seen, breeding unconfirmed | Common visitor to the area"
+      }
+    ],
+    "description": "Mass edit cells in column occurenceRemarks"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "dynamicProperties",
+          "expression": "value",
+          "columnName": "dynamicProperties",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Common visitor to the area",
+                "l": "Common visitor to the area"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "occurenceRemarks",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Original coordinates taken from Google Earth"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Original coordinates taken from Google Earth | Common visitor to the area"
+      }
+    ],
+    "description": "Mass edit cells in column occurenceRemarks"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "dynamicProperties",
+          "expression": "value",
+          "columnName": "dynamicProperties",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Common visitor to the area",
+                "l": "Common visitor to the area"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "occurenceRemarks",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Frequently visit the Area and use the islands during their annual moult"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Frequently visit the Area and use the islands during their annual moult | Common visitor to the area"
+      }
+    ],
+    "description": "Mass edit cells in column occurenceRemarks"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "dynamicProperties",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Common visitor to the area"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Mass edit cells in column dynamicProperties"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "dynamicProperties",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Weddell seal lice"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Weddell seal lice"
+      }
+    ],
+    "description": "Mass edit cells in column dynamicProperties"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "dynamicProperties",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Weddell seal lice"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Mass edit cells in column dynamicProperties"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "dynamicProperties",
+    "expression": "grel:'{\"ACBR_ID\": \"' + cells[\"ACBR_ID\"].value + '\", ' +\n'\"ASPA_ID\": \"' + cells[\"ASPA_ID\"].value + '\", ' +\n'\"Publish_YEAR\": \"' + cells[\"Publish_YEAR\"].value + '\", ' +\n'\"Publish_SOURCE\": \"' + cells[\"Publish_SOURCE\"].value + '\", ' + '\"originalNameTaxonID\": \"' + cells[\"originalNameTaxonID\"].value + '\", ' +\n'\"alternateTaxonID\": \"' + cells[\"alternateTaxonID\"].value + '\", ' +\n'\"PTM_ID\": \"' + cells[\"PTM_ID\"].value + '\", ' +\n'\"PTM_NAME\": \"' + cells[\"PTM_NAME\"].value + '\", ' +\n'\"Snap_IFA\": \"' + cells[\"Snap_IFA\"].value + '\", ' +\n'\"Dist_IFA\": \"' + cells[\"Dist_IFA\"].value + '\", ' +\n'\"Num_duplicates\": \"' + cells[\"Num_duplicates\"].value + '\"}'",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column dynamicProperties using expression grel:'{\"ACBR_ID\": \"' + cells[\"ACBR_ID\"].value + '\", ' +\n'\"ASPA_ID\": \"' + cells[\"ASPA_ID\"].value + '\", ' +\n'\"Publish_YEAR\": \"' + cells[\"Publish_YEAR\"].value + '\", ' +\n'\"Publish_SOURCE\": \"' + cells[\"Publish_SOURCE\"].value + '\", ' + '\"originalNameTaxonID\": \"' + cells[\"originalNameTaxonID\"].value + '\", ' +\n'\"alternateTaxonID\": \"' + cells[\"alternateTaxonID\"].value + '\", ' +\n'\"PTM_ID\": \"' + cells[\"PTM_ID\"].value + '\", ' +\n'\"PTM_NAME\": \"' + cells[\"PTM_NAME\"].value + '\", ' +\n'\"Snap_IFA\": \"' + cells[\"Snap_IFA\"].value + '\", ' +\n'\"Dist_IFA\": \"' + cells[\"Dist_IFA\"].value + '\", ' +\n'\"Num_duplicates\": \"' + cells[\"Num_duplicates\"].value + '\"}'"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Location",
+    "newColumnName": "verbatimLocality",
+    "description": "Rename column Location to verbatimLocality"
+  }
+]
