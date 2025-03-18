@@ -1301,5 +1301,17 @@
       }
     ],
     "description": "Mass edit cells in column specificEpithet"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "occurenceRemarks",
+    "newColumnName": "occurrenceRemarks",
+    "description": "Rename column occurenceRemarks to occurrenceRemarks"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "coordinateUncertaintyInMetres",
+    "newColumnName": "coordinateUncertaintyInMeters",
+    "description": "Rename column coordinateUncertaintyInMetres to coordinateUncertaintyInMeters"
   }
 ]
