@@ -10,6 +10,7 @@ Terauds, Aleks; Lee, Jasmine R. ; Wauchope, Hannah S.; Raymond, Ben; Bergstrom, 
 
 - Dataset is mapped to Darwin Core on GBIF https://doi.org/10.15468/m8wur6
 - GBIF dataset is linked to its home page in [AADC](http://dx.doi.org/doi:10.4225/15/59100ba9157f7)
+- Revision Date: 2019-11-21 for raw data received, in [data/raw/AAS_4296_Biodiversity_IceFree_Antarctica_DB.csv](./data/raw/AAS_4296_Biodiversity_IceFree_Antarctica_DB.csv)
 
 ## 📂 Repository Structure
 
@@ -33,20 +34,20 @@ Download and install OpenRefine from [https://openrefine.org/download.html](http
 
 ### **2️⃣ Load the Raw Dataset**
 1. Open OpenRefine.
-2. Click **"Create Project"** and select the raw dataset: `data/raw/AAS_4296_Biodiversity_IceFree_Antarctica_DB.csv`
+2. Click **"Create Project"** and select the raw dataset: [data/raw/AAS_4296_Biodiversity_IceFree_Antarctica_DB.csv](./data/raw/AAS_4296_Biodiversity_IceFree_Antarctica_DB.csv)
 3. Click **Next** and adjust any parsing settings as needed.
 4. Click **Create Project**.
 
 ### **3️⃣ Apply OpenRefine Transformations**
 1. Navigate to the **Undo/Redo** tab.
 2. Click **"Apply"**.
-3. Upload the transformation script: `openrefine/openrefine-operations.json`
+3. Upload the transformation script: [openrefine/openrefine-operations.json](./openrefine/openrefine-operations.json)
 4. Click **OK** to apply the cleaning steps.
 
 ### **4️⃣ Export the Cleaned Dataset**
 1. Once transformations are applied, click **Export**.
 2. Save the cleaned dataset as a TSV file (or another format).
-3. The cleaned dataset is available in: `data/cleaned/AAS_4296_Biodiversity_IceFree_Antarctica_DB.tsv`
+3. The cleaned dataset is available in: [data/cleaned/AAS_4296_Biodiversity_IceFree_Antarctica_DB.tsv](./data/cleaned/AAS_4296_Biodiversity_IceFree_Antarctica_DB.tsv)
 
 
 ## 📜 Alternative: Load the Full OpenRefine Project
@@ -54,16 +55,18 @@ If you want to inspect the project with all changes applied:
 1. Open OpenRefine.
 2. Go to the **"Manage projects"** page.
 3. Click **"Import Project"**.
-4. Select: `openrefine/AAS_4296_Biodiversity_IceFree_Antarctica_DB.openrefine.tar.gz`
+4. Select: [openrefine/AAS_4296_Biodiversity_IceFree_Antarctica_DB.openrefine.tar.gz](./openrefine/AAS_4296_Biodiversity_IceFree_Antarctica_DB.openrefine.tar.gz)
 5. This will restore the OpenRefine project with all cleaning steps.
 
 ## 📌 License
 This project is licensed under the [MIT License](LICENSE).
 
+Please note that the dataset is lincensed under CC-BY, specified in the [Dataset page](http://dx.doi.org/doi:10.4225/15/59100ba9157f7)
+
 ---
 
 ### ✉️ Need Help?
-If you encounter any issues, feel free to open an **issue** or reach out!
+If you encounter any issues, feel free to open an **issue**!
 
 
 
