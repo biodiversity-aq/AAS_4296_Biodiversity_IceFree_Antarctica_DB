@@ -6,7 +6,10 @@ This repository contains the **raw** and **cleaned** dataset for the **AAS_4296 
 ## 📊 Dataset Information
 This dataset is part of a study on **biodiversity in ice-free areas of Antarctica**. It is associated with the following data paper:
 
-Terauds, Aleks; Lee, Jasmine R. ; Wauchope, Hannah S.; Raymond, Ben; Bergstrom, Dana; Convey, Peter ; Mason, Claire; Patterson, Charlotte R.; Robinson, Sharon A.; Van de Putte, Anton; Watts, Dave; Chown, Steven L.. 2025 The biodiversity of ice-free Antarctica database [Data paper]. Ecology, 106 (1), e70000. 2, pp. 10.1002/ecy.70000 
+Terauds, Aleks; Lee, Jasmine R. ; Wauchope, Hannah S.; Raymond, Ben; Bergstrom, Dana; Convey, Peter ; Mason, Claire; Patterson, Charlotte R.; Robinson, Sharon A.; Van de Putte, Anton; Watts, Dave; Chown, Steven L.. 2025 The biodiversity of ice-free Antarctica database [Data paper]. Ecology, 106 (1), e70000. 2, pp. [10.1002/ecy.70000](https://doi.org/10.1002/ecy.70000) 
+
+- Dataset is mapped to Darwin Core on GBIF https://doi.org/10.15468/m8wur6
+- GBIF dataset is linked to its home page in [AADC](http://dx.doi.org/doi:10.4225/15/59100ba9157f7)
 
 ## 📂 Repository Structure
 
