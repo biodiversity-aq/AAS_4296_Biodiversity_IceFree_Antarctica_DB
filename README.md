@@ -1,5 +1,11 @@
 # Data Cleaning with OpenRefine – AAS 4296 Biodiversity Ice-Free Antarctica
 
+
+[![Dataset](https://img.shields.io/badge/Dataset-10.15468/m8wur6-Hex#509E2F)](https://doi.org/10.15468/m8wur6)
+[![DOI](https://zenodo.org/badge/950454599.svg)](https://doi.org/10.5281/zenodo.15052141)
+
+
+
 ## 📖 Overview
 This repository contains the **raw** and **cleaned** dataset for the **AAS_4296 Biodiversity Ice-Free Antarctica** project. The data cleaning process was performed using [OpenRefine](https://openrefine.org/), ensuring reproducibility through an exported project and transformation steps.
 
